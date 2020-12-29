@@ -1,0 +1,14 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://old:hehehe@0.0.0.0:5432/old?schema=public"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+// id name email unique favorite_flavor

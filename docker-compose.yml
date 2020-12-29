@@ -1,0 +1,17 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    depends_on:
+      - reverent_kirch
+      - friendly_brattain
+    environment:
+      - OLD_DATABASE_URL=postgres://old:hehehe@old:5432/old
+      - NEW_DATABASE_URL=postgres://new:hahaha@new:5433/new
+      - PORT=3000
+    ports:
+    volumes:
+      - .:/app/
+      - /node_modules
+    command: yarn start
