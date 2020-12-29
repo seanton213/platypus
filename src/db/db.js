@@ -32,5 +32,4 @@ class AccountDatabase {
 
 }
 
-
-export { AccountDatabase };
+export default AccountDatabase;

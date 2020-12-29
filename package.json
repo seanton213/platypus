@@ -7,7 +7,7 @@
     "start": "babel-node src/index.js",
     "start-dev": "nodemon --exec babel-node src/index.js",
     "generate": "prisma generate --schema prisma/new_schema.prisma && prisma generate --schema prisma/old_schema.prisma ",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
