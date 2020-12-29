@@ -3,14 +3,12 @@ services:
   app:
     build:
       context: .
-    depends_on:
-      - reverent_kirch
-      - friendly_brattain
     environment:
-      - OLD_DATABASE_URL=postgres://old:hehehe@old:5432/old
-      - NEW_DATABASE_URL=postgres://new:hahaha@new:5433/new
+      - OLD_DATABASE_URL=postgres://old:hehehe@0.0.0.0:5432/old
+      - NEW_DATABASE_URL=postgres://new:hahaha@0.0.0.0:5433/new
       - PORT=3000
     ports:
+      - "3000:3000"
     volumes:
       - .:/app/
       - /node_modules

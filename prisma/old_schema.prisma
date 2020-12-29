@@ -8,7 +8,11 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
+  output   = "../src/generated/oldClient"
 }
 
-
-// id name email unique favorite_flavor
+model accounts {
+  id                String
+  name              String
+  email             String @unique
+}

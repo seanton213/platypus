@@ -1,0 +1,16 @@
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://new:hahaha@0.0.0.0:5433/new?schema=public"
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/newClient"
+}
+
+model accounts {
+  id                String
+  name              String
+  email             String @unique
+  favorite_flavor   String
+}

@@ -7,6 +7,4 @@ RUN yarn install
 
 COPY . /src/
 
-RUN yarn build
-
 EXPOSE 8080
