@@ -1,7 +1,14 @@
-async function findMissingRecords() {
+async function findMissingAccounts(oldAccountIdsSet, newAccountIdsSet) {
+    let missingAccountIds = [];
 
-console.log()
+    oldAccountIdsSet.forEach(oldAccountId => {
+        if (!newAccountIdsSet.has(oldAccountId)) {
+            missingAccountIds.append(oldAccountId);
+        }
+    });
+
+    return missingAccountIds;
 }
 
 
-export { findMissingRecords }
+export { findMissingAccounts };

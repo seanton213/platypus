@@ -1,5 +1,5 @@
-async function findCorruptRecords() {
+async function findCorruptAccounts() {
 
 }
 
-export { findCorruptRecords }
+export { findCorruptAccounts }
