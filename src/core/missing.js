@@ -1,13 +1,13 @@
-async function findMissingAccounts(oldAccountIdsSet, newAccountIdsSet) {
-    let missingAccountIds = [];
+async function findMissingAccounts(oldAccountRecords, newAccountRecords) {
+    let missingAccounts = [];
 
-    oldAccountIdsSet.forEach(oldAccountId => {
-        if (!newAccountIdsSet.has(oldAccountId)) {
-            missingAccountIds.append(oldAccountId);
+    for (const [key, value] of Object.entries(oldAccountRecords)) {
+        if (!newAccountRecords.hasOwnProperty(key)) {
+            missingAccounts.push(value);
         }
-    });
+    }
 
-    return missingAccountIds;
+    return { missingAccounts };
 }
 
 

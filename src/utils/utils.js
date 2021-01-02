@@ -11,24 +11,4 @@ const inflate = (list, key) => {
         }, {});        
 };
 
-/**
- * This function will take the keys of a Map and create a Set
- * It will return an error if we cannot create a Set
- * @param {*} map 
- */
-const keysToSet = (map) => {
-    let mySet = new Set();
-    const keys = map.keys();
-
-    let key;
-    for(key in keys) {
-        if (mySet.has(key)) {
-            throw new Error("Key Set is not unique!");
-        }
-        mySet.add(key);
-    }
-
-    return mySet;
-};
-
-export { inflate, keysToSet };
+export { inflate };

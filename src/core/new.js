@@ -1,13 +1,13 @@
-async function findNewAccounts(oldAccountIdsSet, newAccountIdsSet) {
-    let newAccountIds = [];
+async function findNewAccounts(oldAccountRecords, newAccountRecords) {
+    let newAccounts = [];
 
-    newAccountIdsSet.forEach(newAccountId => {
-        if (!oldAccountIdsSet.has(newAccountId)) {
-            newAccountIds.append(newAccountId);
+    for (const [key, value] of Object.entries(newAccountRecords)) {
+        if (!oldAccountRecords.hasOwnProperty(key)) {
+            newAccounts.push(value);
         }
-    });
+    }
 
-    return newAccountIds;
+    return { newAccounts };
 }
 
 export { findNewAccounts }
