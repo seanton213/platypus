@@ -20,7 +20,7 @@ https://nodejs.org/en/download/
     - https://heynode.com/tutorial/install-nodejs-locally-nvm
 
 *Note: you can also use Homebrew to install these packages as well if you're more comfortable using it.*
-
+*Note: if you wish to have a local Postgres running, change the ports for the original data set, otherwise the Prisma client will try to resolve to your local Postgres*
 ---
 
 ## Using the service

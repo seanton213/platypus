@@ -21,15 +21,6 @@ class AccountDatabase {
     findAll() {
         return this.prismaClient.accounts.findMany();
     }
-
-    findById(id) {
-        return this.prismaClient.accounts.findUnique({
-            where: {
-                id: id
-            }
-        })
-    }
-
 }
 
 export default AccountDatabase;

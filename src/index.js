@@ -1,4 +1,4 @@
-import { findCorruptAccounts } from './core/corrupt';
+import { getCorruptAccountsWithCorrectedInfo } from './core/corrupt';
 import { findMissingAccounts } from './core/missing';
 import { findNewAccounts } from './core/new';
 import AccountDatabase from './db/db';
@@ -11,10 +11,11 @@ async function main() {
 
     //Ideally make these Debug logging levels
     console.log("Attemping to grab records from Old and New Account Databases");
-    const newAccountRecordsPromise = inflate(await newAccountDatabase.findAll());
-    const oldAccountRecordsPromise = inflate(await oldAccountDatabase.findAll());
 
-    const [oldAccountRecords, newAccountRecords] = Promise.all([oldAccountRecordsPromise, newAccountRecordsPromise]);
+    const newAccountRecordsPromise = inflate(await newAccountDatabase.findAll(), "id");
+    const oldAccountRecordsPromise = inflate(await oldAccountDatabase.findAll(), "id");
+
+    const [oldAccountRecords, newAccountRecords] = await Promise.all([oldAccountRecordsPromise, newAccountRecordsPromise]);
     console.log("Got all Accounts");
 
     console.log("Going to find Missing Accounts");    

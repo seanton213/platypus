@@ -3,7 +3,7 @@
  * The reasoning behind this is to create fast lookup
  * @param {*} list 
  * @param {*} key 
- */
+ */ 
 async function inflate(list, key) {
     return list.reduce(function(map, obj) {
             map[obj[key]] = obj;
