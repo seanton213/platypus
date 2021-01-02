@@ -52,4 +52,15 @@ yarn generate
 
 ## Assumptions
 
-- Each name refers to a single person. I.e name is the sole name, no consideration of last name to know they are separate people.
+- Each name refers to a single person. I.e name is the sole name, no consideration of last name to know they are separate people. Thus, we must use the ID to know whether an entity exists in the new Account Database.
+
+- The new column, favorite_flavor, in the new table isn't necessary for us to determine whether a record is corrupt. We should only rely on the columns that are present in both tables.
+
+- Our comparison for corrupt data should verify that
+    1. The original entity exists in the new database
+    2. The name and email are the same as the original record
+        - a. If not, we will create objects to denote the corrupted data as it exists in the new Account Database, and what we should insert in order to make the record correct.
+
+- Since email is unique, we must first remove the corrupted rows and insert with the correct data. We can't simply update the fields since we can't make updates to rows asynchronously.
+
+- If a record is corrupt, we could assume that we don't know who the entered favorite_flavor belongs to since name and/or email can be corrupted. So upon inserting the records of the missing and records that replace the corrected records, we can allow the default favorite_flavor (chocolate) be the flavor.

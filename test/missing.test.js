@@ -1,7 +1,7 @@
 import { findMissingAccounts } from "../src/core/missing";
 import 'regenerator-runtime/runtime';
 
-test("findMissingAccounts should do find records that don't exist in new accounts", async () => {
+test("findMissingAccounts should do find records that don't exist in new accounts database", async () => {
     const newAccountsAfterInflate = {2: { id: 2, name: "Obama", email: "obama@usa.gov" }};
     const oldAccountsAfterInflate = {1: { id: 1, name: "Sean", email: "seanton213@gmail.com" }, 2: { id: 2, name: "Obama", email: "obama@usa.gov" }};
 

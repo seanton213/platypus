@@ -15,15 +15,15 @@ class AccountDatabase {
             throw new Error("Unsupported Database");
         }
 
-        this.prismaClient = databases.dbName;
+        this.prismaClient = databases[dbName];
     }
 
     findAll() {
-        return this.prismaClient.findMany();
+        return this.prismaClient.accounts.findMany();
     }
 
     findById(id) {
-        return this.prismaClient.findUnique({
+        return this.prismaClient.accounts.findUnique({
             where: {
                 id: id
             }

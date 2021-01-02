@@ -1,7 +1,7 @@
 {
   "name": "platypus",
   "version": "1.0.0",
-  "description": "",
+  "description": "A service to generate reports after an Account database migration",
   "main": "index.js",
   "scripts": {
     "start": "babel-node src/index.js",
