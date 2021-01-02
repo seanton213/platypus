@@ -1,19 +1,7 @@
 class Report {
-    constructor() {
-        this.missingAccounts = [];
-        this.corruptAccounts = [];
-        this.newAccounts = [];
-    }
-
-    setMissingAccounts(missingAccounts) {
+    constructor(missingAccounts, corruptAccounts, newAccounts) {
         this.missingAccounts = missingAccounts;
-    }
-
-    setCorruptAccounts(corruptAccounts) {
         this.corruptAccounts = corruptAccounts;
-    }
-    
-    setNewAccounts(newAccounts) {
         this.newAccounts = newAccounts;
     }
 

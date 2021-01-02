@@ -23,7 +23,7 @@ https://nodejs.org/en/download/
 *Note: if you wish to have a local Postgres running, change the ports for the original data set, otherwise the Prisma client will try to resolve to your local Postgres*
 ---
 
-## Using the service
+## Using the service and generating the Report
 
 *Note: I've documented this using Yarn, but you can use NPM too.*
 - Outputting the report
@@ -40,6 +40,8 @@ yarn test
 ```
 yarn generate
 ```
+
+
 
 ---
 

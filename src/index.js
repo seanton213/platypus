@@ -1,6 +1,7 @@
 import { getCorruptAccountsWithCorrectedInfo } from './core/corrupt';
 import { findMissingAccounts } from './core/missing';
 import { findNewAccounts } from './core/new';
+import Report from './core/Report';
 import AccountDatabase from './db/db';
 import { inflate } from './utils/utils'
 
@@ -27,10 +28,13 @@ async function main() {
     console.log("Going to find Corrupt Accounts");
     const corruptAccounts = getCorruptAccountsWithCorrectedInfo(oldAccountRecords, newAccountRecords);
 
-    Promise.all([missingAccounts, newAccounts, corruptAccounts])
-    .then(([missingAccounts, newAccounts, corruptAccounts]) => {
+    Promise.all([missingAccounts, corruptAccounts, newAccounts])
+    .then(([resultOne, resultTwo, resultThree]) => {
         console.log("Found all Missing, New, and Corrupt Accounts!");
         console.log("Beginning Report Generation");
+
+        const reportGenerator = new Report(resultOne.missingAccounts, resultTwo.corruptAccountsWithCorrectedInfo, resultThree.newAccounts);
+        reportGenerator.generate();
     })
     .catch(e => {
         console.log("Generating Account Migration Report failed", e);
