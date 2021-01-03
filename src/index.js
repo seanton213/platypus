@@ -10,7 +10,7 @@ const oldAccountDatabase = new AccountDatabase("OLD");
 
 async function main() {
 
-    //Ideally make these Debug logging levels
+    //Ideally make these Debug logging levels. Included these console.logs to help the user see what's happening
     console.log("Attemping to grab records from Old and New Account Databases");
 
     const newAccountRecordsPromise = inflate(await newAccountDatabase.findAll(), "id");
@@ -29,16 +29,18 @@ async function main() {
     const corruptAccounts = getCorruptAccountsWithCorrectedInfo(oldAccountRecords, newAccountRecords);
 
     Promise.all([missingAccounts, corruptAccounts, newAccounts])
-    .then(([resultOne, resultTwo, resultThree]) => {
-        console.log("Found all Missing, New, and Corrupt Accounts!");
-        console.log("Beginning Report Generation");
+        .then(async ([resultOne, resultTwo, resultThree]) => {
+            console.log("Found all Missing, New, and Corrupt Accounts!");
+            console.log("Beginning Report Generation");
 
-        const reportGenerator = new Report(resultOne.missingAccounts, resultTwo.corruptAccountsWithCorrectedInfo, resultThree.newAccounts);
-        reportGenerator.generate();
-    })
-    .catch(e => {
-        console.log("Generating Account Migration Report failed", e);
-    });
+            const reportGenerator = new Report(resultOne.missingAccounts, resultTwo.corruptAccountsWithCorrectedInfo, resultThree.newAccounts);
+            await reportGenerator.generate();
+
+            console.log("Report generation completed!");
+        })
+        .catch(e => {
+            console.log("Generating Account Migration Report failed", e);
+        });
 }
 
 (async () => {
