@@ -162,7 +162,7 @@ export type accounts = {
   id: string
   name: string
   email: string
-  favorite_flavor: string
+  favoriteFlavor: string
 }
 
 
@@ -581,21 +581,21 @@ export namespace Prisma {
     id: string | null
     name: string | null
     email: string | null
-    favorite_flavor: string | null
+    favoriteFlavor: string | null
   }
 
   export type AccountsMaxAggregateOutputType = {
     id: string | null
     name: string | null
     email: string | null
-    favorite_flavor: string | null
+    favoriteFlavor: string | null
   }
 
   export type AccountsCountAggregateOutputType = {
     id: number | null
     name: number | null
     email: number | null
-    favorite_flavor: number | null
+    favoriteFlavor: number | null
     _all: number
   }
 
@@ -604,21 +604,21 @@ export namespace Prisma {
     id?: true
     name?: true
     email?: true
-    favorite_flavor?: true
+    favoriteFlavor?: true
   }
 
   export type AccountsMaxAggregateInputType = {
     id?: true
     name?: true
     email?: true
-    favorite_flavor?: true
+    favoriteFlavor?: true
   }
 
   export type AccountsCountAggregateInputType = {
     id?: true
     name?: true
     email?: true
-    favorite_flavor?: true
+    favoriteFlavor?: true
     _all?: true
   }
 
@@ -647,7 +647,7 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    favorite_flavor?: boolean
+    favoriteFlavor?: boolean
   }
 
   export type accountsGetPayload<
@@ -1072,7 +1072,7 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     email: 'email',
-    favorite_flavor: 'favorite_flavor'
+    favoriteFlavor: 'favoriteFlavor'
   };
 
   export type AccountsScalarFieldEnum = (typeof AccountsScalarFieldEnum)[keyof typeof AccountsScalarFieldEnum]
@@ -1106,14 +1106,14 @@ export namespace Prisma {
     id?: StringFilter | string
     name?: StringFilter | string
     email?: StringFilter | string
-    favorite_flavor?: StringFilter | string
+    favoriteFlavor?: StringFilter | string
   }
 
   export type accountsOrderByInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    favorite_flavor?: SortOrder
+    favoriteFlavor?: SortOrder
   }
 
   export type accountsWhereUniqueInput = {
@@ -1124,21 +1124,21 @@ export namespace Prisma {
     id: string
     name: string
     email: string
-    favorite_flavor: string
+    favoriteFlavor: string
   }
 
   export type accountsUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    favorite_flavor?: StringFieldUpdateOperationsInput | string
+    favoriteFlavor?: StringFieldUpdateOperationsInput | string
   }
 
   export type accountsUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    favorite_flavor?: StringFieldUpdateOperationsInput | string
+    favoriteFlavor?: StringFieldUpdateOperationsInput | string
   }
 
   export type StringFilter = {

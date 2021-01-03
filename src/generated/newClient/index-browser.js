@@ -73,7 +73,7 @@ exports.Prisma.AccountsScalarFieldEnum = makeEnum({
   id: 'id',
   name: 'name',
   email: 'email',
-  favorite_flavor: 'favorite_flavor'
+  favoriteFlavor: 'favoriteFlavor'
 });
 
 exports.Prisma.SortOrder = makeEnum({

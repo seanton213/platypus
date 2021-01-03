@@ -18,7 +18,14 @@ function isRecordCorrupt(oldAccountRecord, newAccountRecord) {
 }
 
 function buildCorruptAndCorrectedInfo(accountId, oldAccountData, corruptedData) {
-    return { [accountId]: { corruptedData, correctData: oldAccountData } };
+    return { 
+        id: accountId, 
+        corruptedName: corruptedData.name, 
+        correctName: oldAccountData.name,
+        corruptedEmail: corruptedData.email,
+        correctEmail: oldAccountData.email,
+        inputtedFavoriteFlavor: corruptedData.favoriteFlavor
+    };
 }
 
 export { getCorruptAccountsWithCorrectedInfo };

@@ -12,5 +12,5 @@ model accounts {
   id                String
   name              String
   email             String @unique
-  favorite_flavor   String
+  favoriteFlavor    String @map("favorite_flavor")
 }

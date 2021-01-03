@@ -9,8 +9,8 @@ test("getCorruptAccountsWithCorrectedInfo should find record with corrupted name
     const corruptAccountsWithCorrectedInfo = result.corruptAccountsWithCorrectedInfo;
 
     expect(corruptAccountsWithCorrectedInfo.length).toEqual(1);
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.name).toEqual("Naes");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.name).toEqual("Sean");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedName).toEqual("Naes");
+    expect(corruptAccountsWithCorrectedInfo[0].correctName).toEqual("Sean");
 });
 
 test("getCorruptAccountsWithCorrectedInfo should find record with corrupted email", async () => {
@@ -21,8 +21,8 @@ test("getCorruptAccountsWithCorrectedInfo should find record with corrupted emai
     const corruptAccountsWithCorrectedInfo = result.corruptAccountsWithCorrectedInfo;
 
     expect(corruptAccountsWithCorrectedInfo.length).toEqual(1);
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.email).toEqual("seanton213333@gmail.com");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.email).toEqual("seanton213@gmail.com");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedEmail).toEqual("seanton213333@gmail.com");
+    expect(corruptAccountsWithCorrectedInfo[0].correctEmail).toEqual("seanton213@gmail.com");
 });
 
 test("getCorruptAccountsWithCorrectedInfo should find record with corrupted name and email", async () => {
@@ -33,10 +33,10 @@ test("getCorruptAccountsWithCorrectedInfo should find record with corrupted name
     const corruptAccountsWithCorrectedInfo = result.corruptAccountsWithCorrectedInfo;
 
     expect(corruptAccountsWithCorrectedInfo.length).toEqual(1);
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.name).toEqual("Naes");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.name).toEqual("Sean");
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.email).toEqual("seanton213333@gmail.com");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.email).toEqual("seanton213@gmail.com");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedName).toEqual("Naes");
+    expect(corruptAccountsWithCorrectedInfo[0].correctName).toEqual("Sean");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedEmail).toEqual("seanton213333@gmail.com");
+    expect(corruptAccountsWithCorrectedInfo[0].correctEmail).toEqual("seanton213@gmail.com");
 });
 
 test("getCorruptAccountsWithCorrectedInfo should find record with corrupted data, but not find a missing record ", async () => {
@@ -47,8 +47,8 @@ test("getCorruptAccountsWithCorrectedInfo should find record with corrupted data
     const corruptAccountsWithCorrectedInfo = result.corruptAccountsWithCorrectedInfo;
 
     expect(corruptAccountsWithCorrectedInfo.length).toEqual(1);
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.name).toEqual("Naes");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.name).toEqual("Sean");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedName).toEqual("Naes");
+    expect(corruptAccountsWithCorrectedInfo[0].correctName).toEqual("Sean");
 });
 
 test("getCorruptAccountsWithCorrectedInfo should find record with corrupted data, but not find a new record ", async () => {
@@ -59,8 +59,8 @@ test("getCorruptAccountsWithCorrectedInfo should find record with corrupted data
     const corruptAccountsWithCorrectedInfo = result.corruptAccountsWithCorrectedInfo;
 
     expect(corruptAccountsWithCorrectedInfo.length).toEqual(1);
-    expect(corruptAccountsWithCorrectedInfo[0][1].corruptedData.name).toEqual("Naes");
-    expect(corruptAccountsWithCorrectedInfo[0][1].correctData.name).toEqual("Sean");
+    expect(corruptAccountsWithCorrectedInfo[0].corruptedName).toEqual("Naes");
+    expect(corruptAccountsWithCorrectedInfo[0].correctName).toEqual("Sean");
 });
 
 test("getCorruptAccountsWithCorrectedInfo should not find any corrupted records", async () => {

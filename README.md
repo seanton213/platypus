@@ -41,7 +41,7 @@ yarn test
 yarn generate
 ```
 
-
+After running the service, check the `output` directory for a PDF explaining the results, and CSVs with the data for New, Missing, and Corrupt Accounts
 
 ---
 
