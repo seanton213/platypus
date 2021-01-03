@@ -43,6 +43,8 @@ yarn generate
 
 After running the service, check the `output` directory for a PDF explaining the results, and CSVs with the data for New, Missing, and Corrupt Accounts
 
+*Note: Starting the service in a docker container isn't working at the moment because I'm having trouble connecting to the other docker containers of the databases.*
+
 ---
 
 ## Definitions

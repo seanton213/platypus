@@ -103,7 +103,10 @@ const config = {
     "name": "client",
     "provider": "prisma-client-js",
     "output": "/Users/solson/Desktop/platypus/src/generated/newClient",
-    "binaryTargets": [],
+    "binaryTargets": [
+      "native",
+      "debian-openssl-1.1.x"
+    ],
     "previewFeatures": [],
     "config": {},
     "isCustomOutput": true
@@ -145,6 +148,9 @@ Object.assign(exports, Prisma)
 **/
 path.join(__dirname, 'query-engine-darwin');
 path.join(process.cwd(), './src/generated/newClient/query-engine-darwin');
+
+path.join(__dirname, 'query-engine-debian-openssl-1.1.x');
+path.join(process.cwd(), './src/generated/newClient/query-engine-debian-openssl-1.1.x');
 
 /**
  * Annotation for `@vercel/nft`
